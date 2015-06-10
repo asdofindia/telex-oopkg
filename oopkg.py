@@ -43,14 +43,12 @@ class OneOffPackageManager(plugin.TelexPlugin):
         try:
             os.unlink(src)
         except OSError as e:
-            print("OSerror")
             rmattempt = self._rmtree(src)
-            return "Could not remove symlink. Error: {}\nTrying to rm instead\n{}".format("somerror", "rmattempt")#str(e), rmattempt)
+            return "Could not remove symlink. Error: {}\nTrying to rm instead\n{}".format(str(e), rmattempt)
         return "Removed symlink"
 
     def _rmtree(self, src):
         try:
-            print("removing tree")
             shutil.rmtree(src)
         except shutil.Error as e:
             return 'Could not delete. Error: %s' % e
@@ -60,9 +58,9 @@ class OneOffPackageManager(plugin.TelexPlugin):
 
     def _rm_directory(self, src):
         if os.name == "posix":
-            self._unlink(src)
+            return self._unlink(src)
         else:
-            self._rmtree(src)
+            return self._rmtree(src)
 
     def _pkg_repo_path(self, pkg_name):
         return path.join(PKG_INSTALL_DIR, pkg_name)
