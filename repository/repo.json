@@ -1,0 +1,9 @@
+{
+    "name": "OneOffPackageManager",
+    "description": "One off package manager for telex. Lets you install packages directly from a local folder or a github repo.",
+    "version": "0.1",
+    "default_enable": ["OneOffPackageManager"],
+    "homepage": "https://github.com/asdofindia/telex-oopkg",
+    "repo": "https://github.com/asdofindia/telex-oopkg.git",
+    "branch": "master"
+}

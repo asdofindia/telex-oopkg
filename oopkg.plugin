@@ -1,0 +1,9 @@
+[Core]
+Name = OneOffPackageManager
+Module = oopkg
+
+[Documentation]
+Author = Akshay S Dinesh
+Version = 0.1
+Website = https://github.com/asdofindia/telex-oopkg
+Description = One off package manager for telex. Lets you install packages directly from a local folder or a github repo. Untested on windows. Uninstallation might lead to rm -rf /
